@@ -51,6 +51,19 @@ def student_info_confirm():
     return render_template("student_add_result.html", first_name = first_name, 
                             last_name = last_name, github = github)
 
+@app.route("/project-title")
+def display_project_form():
+
+    return render_template("project_listing.html")
+
+@app.route("/project")
+def project_listing():
+    """List info about project"""
+
+    project_title = request.args.get('title')
+    info = hackbright.get_project_by_title(project_title)
+
+    return render_template("project_listing_info.html", info=info)
 
 
 
