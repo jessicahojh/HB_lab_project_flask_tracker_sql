@@ -6,6 +6,15 @@
 <body>
   <h1>{{ first }} {{ last }}</h1>
 
-  <p>GitHub Account: {{ github }}</p>
+  <p>GitHub Account: {{ github }}
+    <ul>
+        {% for grade, title in row %}
+        <li>
+        Project: {{ title }} / Grade: {{ grade }} 
+        {% endfor %}
+        </li>
+    </ul>
+
+  </p>
 </body>
 </html>
